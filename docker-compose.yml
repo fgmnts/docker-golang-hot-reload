@@ -1,0 +1,12 @@
+version: "3"
+services:
+  golang-hot:
+    container_name: golang-hot
+    ports:
+      - 8090:8090
+    build:
+      dockerfile: Dockerfile
+      context: ./
+    volumes:
+      - ./:/go/src/app/
+    restart: unless-stopped
